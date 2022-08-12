@@ -17,6 +17,10 @@ connection = psycopg2.connect(
 cursor = connection.cursor()
 
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/<contact>')
 def hello_world(contact):
     if not connection:
